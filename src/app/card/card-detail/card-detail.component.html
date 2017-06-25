@@ -1,0 +1,13 @@
+<a>
+  <md-card>
+    <md-card-title>{{contact?.firstname}} {{contact?.lastname}}</md-card-title>
+    <md-card-content>
+      <md-list dense>
+        <md-list-item>{{contact?.description}}</md-list-item>
+        <md-list-item>{{contact?.longdescription}}</md-list-item>
+        <md-list-item>{{contact?.address}}</md-list-item>
+        <md-list-item>{{contact?.birthday | date}}</md-list-item>
+      </md-list>
+    </md-card-content>
+  </md-card>
+</a>

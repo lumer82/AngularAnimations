@@ -1,0 +1,3 @@
+<div class="contacts">
+  <app-card-list-entry *ngFor="let contact of contacts | async; trackBy: contactId" [contact]="contact"></app-card-list-entry>
+</div>

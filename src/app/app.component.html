@@ -1,1 +1,5 @@
-<app-list></app-list>
+<md-toolbar color="primary">
+  <a md-button [routerLink]="['list']">List</a>
+  <a md-button [routerLink]="['cards']">Cards</a>
+</md-toolbar>
+<main><router-outlet></router-outlet></main>
