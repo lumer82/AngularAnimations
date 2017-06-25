@@ -2,11 +2,13 @@
   <md-card>
     <md-card-title>Source</md-card-title>
     <md-card-content>
-      <md-list [@leaveAni]="source.length">
-        <md-list-item *ngFor="let item of source; trackBy: itemid" (click)="moveToTarget(item, itemRef)">
-          <app-list-item [item]="item.item"
+      <md-list [@list]="source.length">
+        <md-list-item *ngFor="let item of source; trackBy: itemid"
+                      class="item"
+                      (click)="moveToTarget(item, itemRef)">
+          <app-list-item [item]="item"
                          #itemRef
-                         [@create]="{ value: '', params: { translate: translate(item.position, itemRef) }}"></app-list-item>
+                         [@itemState]="{ value: '', params: { translate: translate(positions.get(item), itemRef) }}"></app-list-item>
         </md-list-item>
       </md-list>
     </md-card-content>
@@ -14,11 +16,13 @@
   <md-card>
     <md-card-title>Target</md-card-title>
     <md-card-content>
-      <md-list [@leaveAni]="source.length">
-        <md-list-item *ngFor="let item of target; trackBy: itemid" (click)="moveToSource(item, itemRef)">
-          <app-list-item [item]="item.item"
+      <md-list [@list]="source.length">
+        <md-list-item *ngFor="let item of target; trackBy: itemid"
+                      class="item"
+                      (click)="moveToSource(item, itemRef)">
+          <app-list-item [item]="item"
                          #itemRef
-                         [@create]="{ value: '', params: { translate: translate(item.position, itemRef) }}"></app-list-item>
+                         [@itemState]="{ value: '', params: { translate: translate(positions.get(item), itemRef) }}"></app-list-item>
         </md-list-item>
       </md-list>
     </md-card-content>
